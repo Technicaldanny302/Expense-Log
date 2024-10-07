@@ -42,7 +42,7 @@ namespace SpendSmart.Controllers
 
             return View();
         }
-        public IActionResult DeleteExpenses(int id)
+        public IActionResult DeleteExpense(int id)
         {
             var expenseInDb = _context.Expenses?.SingleOrDefault(expense => expense.Id == id);
             _context.Expenses?.Remove(expenseInDb);
@@ -60,7 +60,6 @@ namespace SpendSmart.Controllers
                 //Editing
                 _context.Expenses?.Update(model);
             }
-            _context.Expenses?.Add(model);
 
             _context.SaveChanges();
 
